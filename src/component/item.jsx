@@ -1,4 +1,5 @@
 import React , { Component }from 'react';
+import {Link} from 'react-router';
 
 export default class Item extends Component{
 	constructor(props){
@@ -6,10 +7,11 @@ export default class Item extends Component{
 	}
 	
 	render(){
-		console.log(this.props.item);
 		return(
 			<li>
-				<p className="title">{this.props.item.title}</p>
+				<p className="title">
+					<Link to={`/topic/${this.props.item.id}`}>{this.props.item.title}</Link>
+				</p>
 				<div className="item_bot">
 					<img src={this.props.item.author.avatar_url} className="pic"/>
 					<div className="item_rt">

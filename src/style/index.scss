@@ -11,10 +11,6 @@
         display: -webkit-flex;
         padding:10px 0;
         color:#fff;
-        .active{
-            color:#555;
-            font-size:16px;
-        }
         .top_tab{
             flex: 1;
             -webkit-flex: 1;
@@ -22,9 +18,14 @@
             text-align: center;
             font-size: 14px;
             border-right: 1px solid #f8f8f8;
+            color:#fff;
         }
         .top_tab:nth-child(5){
             border-right: none;
+        }
+        .active{
+            color:#555;
+            font-size:16px;
         }
     }
     /*----------list start--------------*/
@@ -120,6 +121,39 @@
        }
     }
      /*----------footer end--------------*/
+    
+    /*----------detail start--------------*/
+   .detail_bor{
+       width:100%;
+       padding:45px 0;
+       box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+       .title{
+           font-size:16px;
+           line-height: 26px;
+           background:#ddd;
+           padding:3px 12px;
+            box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+       }
+       .content{
+           box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           padding:0 15px;
+           font-size: 12px;
+           line-height: 16px;
+           img{
+               width:80%;
+               display: block;
+               margin:0 auto;
+           }
+           p{
+               text-indent: 24px;
+               line-height: 24px;
+           }
+       }
+   }
+    
      /*----------login start--------------*/
     .login{
         width:100%;

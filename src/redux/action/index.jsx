@@ -15,7 +15,7 @@ export const fetchIndexData = (query = defaultQuery) => dispatch =>{
 	    success: function (res) {
 	    		let respone = JSON.parse(res);
 	    		 if(respone.success == true){
-	    		 	console.log(respone.data);
+	    		 	//console.log(respone.data);
 	    		 	dispatch({
 	       			type:'GET_LIST',
 	       			list:respone.data
@@ -25,6 +25,36 @@ export const fetchIndexData = (query = defaultQuery) => dispatch =>{
 	    
 	});
 	
+}
+//根据id获取文章详情
+export const getTopic = (id) => dispatch =>{
+	const url = `https://cnodejs.org/api/v1/topic/${id}`;
+	const accesstoken = localStorage.getItem("loginname") || '';
+	ajax({
+	    method: 'get',
+	    url: url,
+	    data:{
+	    		accesstoken:accesstoken
+	    },
+	    success: function (res) {
+	       let respone =  JSON.parse(res);
+	       if(respone.success == true){
+	  
+	       		dispatch({
+	       			type:'TOPIC_DETAIL',
+	       			topic:respone.data
+	       		});
+	       		
+	       }else{
+	       		alert("获取详情失败喽！");
+	       		dispatch({
+	       			type:'LOGIN_ERROR',
+	       			errorInfo:"获取详情失败喽！"
+	       		});
+	       }
+	    }
+	});
+
 }
 //登录
 export const login = (data) => dispatch =>{

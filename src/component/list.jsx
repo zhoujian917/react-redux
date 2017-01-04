@@ -15,9 +15,7 @@ export default class List extends Component{
 	
 	render(){
 		
-		const list = this.props.list;
-		console.log(list);
-		
+		const list = this.props.list;		
 		return(
 			<div className="list">
 				<ul>

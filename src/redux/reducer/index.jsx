@@ -2,7 +2,10 @@ let initialState = {
 	login:false,
 	errorInfo:'',
 	userinfo:[],
-	list:[]
+	list:[],
+	tab:'all',
+	page:'1',
+	topic:{}
 }
 
 export const cnode = (state=initialState,action) =>{
@@ -15,6 +18,8 @@ export const cnode = (state=initialState,action) =>{
 			return Object.assign({},state,{errorInfo:action.errorInfo});
 		case "GET_LIST":
 			return Object.assign({},state,{list:action.list});
+		case "TOPIC_DETAIL":
+			return Object.assign({},state,{topic:action.topic});
 		default:
 			return state;
 	}

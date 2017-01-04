@@ -15,7 +15,6 @@ class Index extends React.Component{
 	}
 	componentWillMount(){
 		this.props.actions.fetchIndexData();
-		
 	}
 	
 	render(){
@@ -26,7 +25,7 @@ class Index extends React.Component{
 		return(
 			<div className="page">
 				<Header/>
-				<List list={list}/>
+				<List list={list} actions={actions}/>
 				<Footer/>
 			</div>
 		);
