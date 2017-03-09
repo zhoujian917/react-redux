@@ -12,6 +12,7 @@ import {connect} from 'react-redux';
 class Index extends React.Component{
 	constructor(props){
 		super(props);
+		console.log(props);
 	}
 	componentWillMount(){
 		this.props.actions.fetchIndexData();

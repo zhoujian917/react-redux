@@ -11,6 +11,7 @@ class Detail extends Component{
 		super(props);
 	}
 	componentWillMount(){
+		window.scroll(0,0);
 		let { params,actions,state } = this.props;
 		actions.getTopic(params.id);
 	}
